@@ -1,0 +1,27 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+  
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    min-height: 100vh;
+}
+
+img, svg {
+    display: block;
+    max-width: 100%;
+}
+
+.sr-only {
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
