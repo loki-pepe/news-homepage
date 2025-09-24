@@ -28,6 +28,8 @@
     --body-padding-inline: clamp(16px, 16.285vw + -45.0687px, 80px);
     --body-padding-bottom: 80px;
     --body-row-gap: 32px;
+    --button-padding-block: 12px;
+    --button-padding-inline: 33px;
     --featured-row-gap: 24px;
     --main-row-gap: 64px;
 
@@ -97,6 +99,9 @@ body {
     text-transform: uppercase;
     color: var(--navy-950);
     background-color: var(--red);
+    width: max-content;
+    padding-block: var(--button-padding-block);
+    padding-inline: var(--button-padding-inline) calc(var(--button-padding-inline) - var(--button-letter-spacing));
 }
 
 .featured {
