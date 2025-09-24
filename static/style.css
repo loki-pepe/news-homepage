@@ -27,6 +27,7 @@
     --body-padding-top: 28px;
     --body-padding-inline: clamp(16px, 16.285vw + -45.0687px, 80px);
     --body-padding-bottom: 80px;
+    --header-margin-bottom: 32px;
 
 
     /* Typography */
@@ -109,6 +110,7 @@ header {
     justify-content: space-between;
     align-items: center;
     /*align-self: stretch;*/
+    margin-block-end: var(--header-margin-bottom);
 }
 
 img, svg {
