@@ -27,7 +27,9 @@
     --body-padding-top: 28px;
     --body-padding-inline: clamp(16px, 16.285vw + -45.0687px, 80px);
     --body-padding-bottom: 80px;
-    --header-margin-bottom: 32px;
+    --body-row-gap: 32px;
+    --featured-row-gap: 24px;
+    --main-row-gap: 64px;
 
 
     /* Typography */
@@ -80,9 +82,9 @@ body {
     letter-spacing: var(--body-letter-spacing);
     line-height: var(--body-line-height);
     color: var(--navy-600);
-    /*display: flex;
-    flex-direction: column;
-    align-items: center;*/
+    display: grid;
+    align-content: center;
+    row-gap: var(--body-row-gap);
     padding: var(--body-padding-top) var(--body-padding-inline) var(--body-padding-bottom);
 }
 
@@ -97,6 +99,11 @@ body {
     background-color: var(--red);
 }
 
+.featured {
+    display: grid;
+    row-gap: var(--featured-row-gap);
+}
+
 .featured h2 {
     font-size: var(--heading-xl-font-size);
     font-weight: var(--heading-xl-font-weight);
@@ -109,8 +116,6 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /*align-self: stretch;*/
-    margin-block-end: var(--header-margin-bottom);
 }
 
 img, svg {
@@ -125,6 +130,11 @@ img, svg {
 
 .logo svg {
     fill: var(--navy-950);
+}
+
+main {
+    display: grid;
+    row-gap: var(--main-row-gap);
 }
 
 #menu-button {
