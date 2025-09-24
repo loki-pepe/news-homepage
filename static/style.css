@@ -6,6 +6,30 @@
 :root {
     /* Typography */
     --font-family: "Inter", Arial, sans-serif;
+
+    --body-font-size: 0.9375rem;
+    --button-font-size: 0.875rem;
+    --heading-xl-font-size: clamp(2.5rem, 2.381vw + 1.3571rem, 3.5rem);
+    --heading-l-font-size: 2rem;
+    --heading-m-font-size: 1.25rem;
+    --heading-s-font-size: 1.125rem;
+
+    --body-font-weight: 400;
+    --button-font-weight: 700;
+    --heading-xl-font-weight: 800;
+    --heading-l-font-weight: 700;
+    --heading-m-font-weight: 800;
+    --heading-s-font-weight: 800;
+
+    --body-letter-spacing: 0;
+    --button-letter-spacing: 4.38px;
+
+    --body-line-height: 1.73333;
+    --button-line-height: 1.71429;
+    --heading-xl-line-height: 1;
+    --heading-l-line-height: 1;
+    --heading-m-line-height: 1.2;
+    --heading-s-line-height: 1.33333;
 }
 
 *, *::before, *::after {
@@ -20,11 +44,45 @@
 body {
     min-height: 100vh;
     font-family: var(--font-family);
+    font-size: var(--body-font-size);
+    font-weight: var(--body-font-weight);
+    letter-spacing: var(--body-letter-spacing);
+    line-height: var(--body-line-height);
+}
+
+.button {
+    font-size: var(--button-font-size);
+    font-weight: var(--button-font-weight);
+    letter-spacing: var(--button-letter-spacing);
+    line-height: var(--button-line-height);
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.featured h2 {
+    font-size: var(--heading-xl-font-size);
+    font-weight: var(--heading-xl-font-weight);
+    letter-spacing: inherit;
+    line-height: var(--heading-xl-line-height);
 }
 
 img, svg {
     display: block;
     max-width: 100%;
+}
+
+.new h2 {
+    font-size: var(--heading-l-font-size);
+    font-weight: var(--heading-l-font-weight);
+    letter-spacing: inherit;
+    line-height: var(--heading-l-line-height);
+}
+
+.new h3 {
+    font-size: var(--heading-m-font-size);
+    font-weight: var(--heading-m-font-weight);
+    letter-spacing: inherit;
+    line-height: var(--heading-m-line-height);
 }
 
 .sr-only {
@@ -35,4 +93,18 @@ img, svg {
   position: absolute;
   white-space: nowrap;
   width: 1px;
+}
+
+.trending h3 {
+    font-size: var(--heading-s-font-size);
+    font-weight: var(--heading-s-font-weight);
+    letter-spacing: inherit;
+    line-height: var(--heading-s-line-height);
+}
+
+@media (width < 62rem /* ovisi o layoutu */) {
+    nav {
+        font-size: var(--heading-s-font-size);
+        line-height: var(--heading-s-line-height);
+    }
 }
