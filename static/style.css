@@ -4,6 +4,21 @@
 }
 
 :root {
+    /* Colors */
+    --white: hsl(0, 100%, 100%);
+    --black: hsl(0, 0%, 0%);
+
+    --grey-300: hsl(233, 8%, 79%);
+    --grey-200: hsl(0, 0%, 85%);
+
+    --navy-950: hsl(240, 100%, 5%);
+    --navy-600: hsl(236, 13%, 42%);
+
+    --gold: hsl(35, 77%, 62%);
+
+    --red: hsl(4, 85%, 63%);
+
+
     /* Typography */
     --font-family: "Inter", Arial, sans-serif;
 
@@ -41,6 +56,11 @@
     margin: 0;
 }
 
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
 body {
     min-height: 100vh;
     font-family: var(--font-family);
@@ -48,6 +68,7 @@ body {
     font-weight: var(--body-font-weight);
     letter-spacing: var(--body-letter-spacing);
     line-height: var(--body-line-height);
+    color: var(--navy-600);
 }
 
 .button {
@@ -57,6 +78,8 @@ body {
     line-height: var(--button-line-height);
     text-decoration: none;
     text-transform: uppercase;
+    color: var(--navy-950);
+    background-color: var(--red);
 }
 
 .featured h2 {
@@ -64,6 +87,7 @@ body {
     font-weight: var(--heading-xl-font-weight);
     letter-spacing: inherit;
     line-height: var(--heading-xl-line-height);
+    color: var(--navy-950);
 }
 
 img, svg {
@@ -71,11 +95,26 @@ img, svg {
     max-width: 100%;
 }
 
+.logo svg {
+    fill: var(--navy-950);
+}
+
+.new {
+    background-color: var(--navy-950);
+    color: var(--grey-300)
+}
+
+.new article:not(:last-of-type) {
+    border-bottom: 1px solid var(--navy-600);
+}
+
 .new h2 {
+    color: var(--navy-950);
     font-size: var(--heading-l-font-size);
     font-weight: var(--heading-l-font-weight);
     letter-spacing: inherit;
     line-height: var(--heading-l-line-height);
+    color: var(--gold);
 }
 
 .new h3 {
@@ -83,6 +122,11 @@ img, svg {
     font-weight: var(--heading-m-font-weight);
     letter-spacing: inherit;
     line-height: var(--heading-m-line-height);
+    color: var(--white);
+}
+
+ol {
+    list-style: none;
 }
 
 .sr-only {
@@ -100,11 +144,32 @@ img, svg {
     font-weight: var(--heading-s-font-weight);
     letter-spacing: inherit;
     line-height: var(--heading-s-line-height);
+    color: var(--navy-950);
+}
+
+@media (hover:hover) {
+    .button:hover {
+        color: var(--white);
+        background-color: var(--navy-950);
+    }
+
+    nav a:hover {
+        color: var(--red);
+    }
+
+    .new a:hover {
+        color: var(--gold);
+    }
+
+    .trending a:hover {
+        color: var(--red);
+    }
 }
 
 @media (width < 62rem /* ovisi o layoutu */) {
     nav {
         font-size: var(--heading-s-font-size);
         line-height: var(--heading-s-line-height);
+        color: var(--navy-950);
     }
 }
