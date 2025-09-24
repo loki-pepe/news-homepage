@@ -19,6 +19,16 @@
     --red: hsl(4, 85%, 63%);
 
 
+    /* Sizing */
+    --logo-height: clamp(28px, 1.7857vw + 14.2857px, 40px);
+
+
+    /* Spacing */
+    --body-padding-top: 28px;
+    --body-padding-inline: clamp(16px, 16.285vw + -45.0687px, 80px);
+    --body-padding-bottom: 80px;
+
+
     /* Typography */
     --font-family: "Inter", Arial, sans-serif;
 
@@ -69,6 +79,10 @@ body {
     letter-spacing: var(--body-letter-spacing);
     line-height: var(--body-line-height);
     color: var(--navy-600);
+    /*display: flex;
+    flex-direction: column;
+    align-items: center;*/
+    padding: var(--body-padding-top) var(--body-padding-inline) var(--body-padding-bottom);
 }
 
 .button {
@@ -90,12 +104,36 @@ body {
     color: var(--navy-950);
 }
 
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /*align-self: stretch;*/
+}
+
 img, svg {
     display: block;
     max-width: 100%;
 }
 
+.logo {
+    aspect-ratio: 13 / 8;
+    height: var(--logo-height);
+}
+
 .logo svg {
+    fill: var(--navy-950);
+}
+
+#menu-button {
+    height: 17px;
+    width: 40px;
+    background-color: inherit;
+    border: none;
+    cursor: pointer;
+}
+
+#menu-button svg {
     fill: var(--navy-950);
 }
 
@@ -125,7 +163,7 @@ img, svg {
     color: var(--white);
 }
 
-ol {
+ol, ul {
     list-style: none;
 }
 
@@ -151,6 +189,10 @@ ol {
     .button:hover {
         color: var(--white);
         background-color: var(--navy-950);
+    }
+
+    #menu-button:hover svg {
+        fill: var(--red);
     }
 
     nav a:hover {
