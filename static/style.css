@@ -21,6 +21,7 @@
 
     /* Sizing */
     --logo-height: clamp(28px, 1.7857vw + 14.2857px, 40px);
+    --trending-article-image-width: 6.25rem;
 
 
     /* Spacing */
@@ -35,6 +36,9 @@
     --new-gap: 32px;
     --new-padding-block: clamp(16px, 4.0712vw + .7328px, 32px);
     --new-padding-inline: clamp(24px, 4.0712vw + 8.7328px, 40px);
+    --trending-row-gap: 32px;
+    --trending-article-row-gap: 8px;
+    --trending-item-column-gap: 24px;
 
 
     /* Typography */
@@ -207,12 +211,48 @@ ol, ul {
   width: 1px;
 }
 
+.trending {
+    counter-reset: trending;
+}
+
+.trending article {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--trending-article-row-gap);
+}
+
+.trending article::before {
+    counter-increment: trending;
+    content: counter(trending, decimal-leading-zero);
+    color: var(--red);
+    font-size: var(--heading-l-font-size);
+    font-weight: var(--heading-l-font-weight);
+    letter-spacing: inherit;
+    line-height: var(--heading-l-line-height);
+}
+
 .trending h3 {
     font-size: var(--heading-s-font-size);
     font-weight: var(--heading-s-font-weight);
     letter-spacing: inherit;
     line-height: var(--heading-s-line-height);
     color: var(--navy-950);
+}
+
+.trending img {
+    width: var(--trending-article-image-width);
+}
+
+.trending li {
+    display: flex;
+    column-gap: var(--trending-item-column-gap);
+    align-items: center;
+}
+
+.trending ol {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--trending-row-gap);
 }
 
 @media (hover:hover) {
