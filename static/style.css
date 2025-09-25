@@ -32,6 +32,9 @@
     --button-padding-inline: 33px;
     --featured-row-gap: 24px;
     --main-row-gap: 64px;
+    --new-gap: 32px;
+    --new-padding-block: clamp(16px, 4.0712vw + .7328px, 32px);
+    --new-padding-inline: clamp(24px, 4.0712vw + 8.7328px, 40px);
 
 
     /* Typography */
@@ -156,11 +159,16 @@ main {
 
 .new {
     background-color: var(--navy-950);
-    color: var(--grey-300)
+    color: var(--grey-300);
+    padding: var(--new-padding-block) var(--new-padding-inline);
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--new-gap);
 }
 
 .new article:not(:last-of-type) {
-    border-bottom: 1px solid var(--navy-600);
+    border-block-end: 1px solid var(--navy-600);
+    padding-block-end: var(--new-gap);
 }
 
 .new h2 {
