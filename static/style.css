@@ -112,6 +112,11 @@ body {
     row-gap: var(--featured-row-gap);
 }
 
+.featured article {
+    display: grid;
+    row-gap: var(--featured-row-gap);
+}
+
 .featured h2 {
     font-size: var(--heading-xl-font-size);
     font-weight: var(--heading-xl-font-weight);
