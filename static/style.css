@@ -37,6 +37,8 @@
     --featured-row-gap: 24px;
     --main-column-gap: 32px;
     --main-row-gap: 64px;
+    --nav-list-column-gap: 40px;
+    --nav-list-row-gap: 24px;
     --new-gap: 32px;
     --new-padding-block: clamp(16px, 4.0712vw + .7328px, 32px);
     --new-padding-inline: clamp(24px, 4.0712vw + 8.7328px, 40px);
@@ -181,6 +183,12 @@ main {
 
 #menu-button svg {
     fill: var(--navy-950);
+}
+
+nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: var(--nav-list-row-gap) var(--nav-list-column-gap);
 }
 
 .new {
@@ -328,6 +336,10 @@ ol, ul {
 
     main {
         grid-template: auto auto / repeat(3, 350px);
+    }
+
+    nav ul {
+        flex-direction: row;
     }
 
     .trending {
