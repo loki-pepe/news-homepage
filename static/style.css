@@ -20,7 +20,9 @@
 
 
     /* Sizing */
+    --featured-image-height: 18.75rem;
     --logo-height: clamp(28px, 1.7857vw + 14.2857px, 40px);
+    --menu-button-width: 2.5rem;
     --trending-article-image-width: 6.25rem;
 
 
@@ -31,11 +33,14 @@
     --body-row-gap: 32px;
     --button-padding-block: 12px;
     --button-padding-inline: 33px;
+    --featured-column-gap: 32px;
     --featured-row-gap: 24px;
+    --main-column-gap: 32px;
     --main-row-gap: 64px;
     --new-gap: 32px;
     --new-padding-block: clamp(16px, 4.0712vw + .7328px, 32px);
     --new-padding-inline: clamp(24px, 4.0712vw + 8.7328px, 40px);
+    --trending-column-gap: 40px;
     --trending-row-gap: 32px;
     --trending-article-row-gap: 8px;
     --trending-item-column-gap: 24px;
@@ -46,7 +51,7 @@
 
     --body-font-size: 0.9375rem;
     --button-font-size: 0.875rem;
-    --heading-xl-font-size: clamp(2.5rem, 2.381vw + 1.3571rem, 3.5rem);
+    --heading-xl-font-size: clamp(2.5rem, 3.7037vw + .7222rem, 3.5rem);
     --heading-l-font-size: 2rem;
     --heading-m-font-size: 1.25rem;
     --heading-s-font-size: 1.125rem;
@@ -84,17 +89,11 @@ a {
 }
 
 body {
-    min-height: 100vh;
-    font-family: var(--font-family);
-    font-size: var(--body-font-size);
-    font-weight: var(--body-font-weight);
-    letter-spacing: var(--body-letter-spacing);
-    line-height: var(--body-line-height);
-    color: var(--navy-600);
-    display: grid;
-    align-content: center;
-    row-gap: var(--body-row-gap);
+    display: flex;
+    justify-content: center;
     padding: var(--body-padding-top) var(--body-padding-inline) var(--body-padding-bottom);
+    min-height: 100vh;
+    min-width: 320px;
 }
 
 .button {
@@ -111,6 +110,19 @@ body {
     padding-inline: var(--button-padding-inline) calc(var(--button-padding-inline) - var(--button-letter-spacing));
 }
 
+.content-container {
+    font-family: var(--font-family);
+    font-size: var(--body-font-size);
+    font-weight: var(--body-font-weight);
+    letter-spacing: var(--body-letter-spacing);
+    line-height: var(--body-line-height);
+    color: var(--navy-600);
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    row-gap: var(--body-row-gap);
+}
+
 .featured {
     display: grid;
     row-gap: var(--featured-row-gap);
@@ -118,7 +130,7 @@ body {
 
 .featured article {
     display: grid;
-    row-gap: var(--featured-row-gap);
+    gap: var(--featured-row-gap) var(--featured-column-gap);
 }
 
 .featured h2 {
@@ -127,6 +139,12 @@ body {
     letter-spacing: inherit;
     line-height: var(--heading-xl-line-height);
     color: var(--navy-950);
+}
+
+.featured img {
+    height: var(--featured-image-height);
+    width: 100%;
+    object-fit: cover;
 }
 
 header {
@@ -151,12 +169,11 @@ img, svg {
 
 main {
     display: grid;
-    row-gap: var(--main-row-gap);
+    gap: var(--main-row-gap) var(--main-column-gap);
 }
 
 #menu-button {
-    height: 17px;
-    width: 40px;
+    width: var(--menu-button-width);
     background-color: inherit;
     border: none;
     cursor: pointer;
@@ -250,9 +267,8 @@ ol, ul {
 }
 
 .trending ol {
-    display: flex;
-    flex-direction: column;
-    row-gap: var(--trending-row-gap);
+    display: grid;
+    gap: var(--trending-row-gap) var(--trending-column-gap);
 }
 
 @media (hover:hover) {
@@ -278,10 +294,47 @@ ol, ul {
     }
 }
 
-@media (width < 62rem /* ovisi o layoutu */) {
+@media (width < 75rem) {
     nav {
         font-size: var(--heading-s-font-size);
         line-height: var(--heading-s-line-height);
         color: var(--navy-950);
+    }
+}
+
+@media (min-width: 75rem) {
+    :root {
+        --body-row-gap: 64px;
+        --new-padding-block: 16px;
+        --new-padding-inline: 24px;
+    }
+
+    body {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .featured {
+        grid-column: 1 / span 2;
+    }
+
+    .featured article {
+        grid-template: 1fr min-content / 1fr 1fr;
+    }
+
+    .featured h2 {
+        grid-row: 1 / -1;
+    }
+
+    main {
+        grid-template: auto auto / repeat(3, 350px);
+    }
+
+    .trending {
+        grid-column: 1 / -1;
+    }
+
+    .trending ol {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
