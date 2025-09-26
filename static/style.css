@@ -22,6 +22,7 @@
     /* Sizing */
     --featured-image-height: 18.75rem;
     --logo-height: clamp(28px, 1.7857vw + 14.2857px, 40px);
+    --main-column-width: 21.875rem;
     --menu-button-width: 2.5rem;
     --trending-article-image-width: 6.25rem;
 
@@ -175,6 +176,7 @@ main {
 }
 
 #menu-button {
+    display: none;
     width: var(--menu-button-width);
     background-color: inherit;
     border: none;
@@ -187,7 +189,6 @@ main {
 
 nav ul {
     display: flex;
-    flex-direction: column;
     gap: var(--nav-list-row-gap) var(--nav-list-column-gap);
 }
 
@@ -302,7 +303,16 @@ ol, ul {
     }
 }
 
-@media (width < 75rem) {
+@media (width < 56rem) {
+    #menu {
+        position: fixed;
+        display: none;
+    }
+
+    #menu-button {
+        display: block;
+    }
+
     nav {
         font-size: var(--heading-s-font-size);
         line-height: var(--heading-s-line-height);
@@ -335,11 +345,7 @@ ol, ul {
     }
 
     main {
-        grid-template: auto auto / repeat(3, 350px);
-    }
-
-    nav ul {
-        flex-direction: row;
+        grid-template: auto auto / repeat(3, var(--main-column-width))
     }
 
     .trending {
