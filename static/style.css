@@ -20,10 +20,12 @@
 
 
     /* Sizing */
+    --close-button-size: 2rem;
     --featured-image-height: 18.75rem;
     --logo-height: clamp(28px, 1.7857vw + 14.2857px, 40px);
     --main-column-width: 21.875rem;
     --menu-button-width: 2.5rem;
+    --menu-content-width: 13rem;
     --trending-article-image-width: 6.25rem;
 
 
@@ -38,6 +40,9 @@
     --featured-row-gap: 24px;
     --main-column-gap: 32px;
     --main-row-gap: 64px;
+    --menu-mobile-gap: 88px;
+    --menu-padding-block: 27px;
+    --menu-padding-inline: 21px clamp(21px, 15.0127vw + -35.2977px, 80px);
     --nav-list-column-gap: 40px;
     --nav-list-row-gap: 24px;
     --new-gap: 32px;
@@ -113,6 +118,20 @@ body {
     padding-inline: var(--button-padding-inline) calc(var(--button-padding-inline) - var(--button-letter-spacing));
 }
 
+#close {
+    display: none;
+    width: var(--close-button-size);
+    aspect-ratio: 1;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    align-self: flex-end;
+}
+
+#close svg {
+    fill: var(--navy-950);
+}
+
 .content-container {
     font-family: var(--font-family);
     font-size: var(--body-font-size);
@@ -175,21 +194,21 @@ main {
     gap: var(--main-row-gap) var(--main-column-gap);
 }
 
+#menu ul {
+    display: flex;
+    gap: var(--nav-list-row-gap) var(--nav-list-column-gap);
+}
+
 #menu-button {
     display: none;
     width: var(--menu-button-width);
-    background-color: inherit;
+    background-color: transparent;
     border: none;
     cursor: pointer;
 }
 
 #menu-button svg {
     fill: var(--navy-950);
-}
-
-nav ul {
-    display: flex;
-    gap: var(--nav-list-row-gap) var(--nav-list-column-gap);
 }
 
 .new {
@@ -304,19 +323,35 @@ ol, ul {
 }
 
 @media (width < 56rem) {
+    #close {
+        display: block;
+    }
+
     #menu {
         position: fixed;
+        top: 0;
+        right: 0;
+        height: 100%;
+        /*display: flex;*/
         display: none;
+        background-color: var(--white);
+        padding-block: var(--menu-padding-block);
+        padding-inline: var(--menu-padding-inline);
+        outline: 100vw solid hsl(0, 0%, 0%, 0.5);
+        font-size: var(--heading-s-font-size);
+        line-height: var(--heading-s-line-height);
+        color: var(--navy-950);
+        flex-direction: column;
+        row-gap: var(--menu-mobile-gap);
+    }
+
+    #menu ul {
+        flex-direction: column;
+        width: var(--menu-content-width);
     }
 
     #menu-button {
         display: block;
-    }
-
-    nav {
-        font-size: var(--heading-s-font-size);
-        line-height: var(--heading-s-line-height);
-        color: var(--navy-950);
     }
 }
 
