@@ -336,7 +336,6 @@ ol, ul {
         background-color: var(--white);
         padding-block: var(--menu-padding-block);
         padding-inline: var(--menu-padding-inline);
-        outline: 100vw solid hsl(0, 0%, 0%, 0.5);
         font-size: var(--heading-s-font-size);
         line-height: var(--heading-s-line-height);
         color: var(--navy-950);
@@ -345,6 +344,15 @@ ol, ul {
     }
     #menu.open {
         display: flex;
+    }
+
+    #menu .overlay {
+        background-color: hsl(0, 0%, 0%, 0.5);
+        position: absolute;
+        left: -100vw;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
     }
 
     #menu ul {
