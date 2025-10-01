@@ -4,6 +4,9 @@
 }
 
 :root {
+    /* Aspect ratio*/
+    --logo-aspect-ratio: 13 / 8;
+
     /* Colors */
     --white: hsl(0, 100%, 100%);
     --black: hsl(0, 0%, 0%);
@@ -181,7 +184,7 @@ img, svg {
 }
 
 .logo {
-    aspect-ratio: 13 / 8;
+    aspect-ratio: var(--logo-aspect-ratio);
     height: var(--logo-height);
 }
 
