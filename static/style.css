@@ -291,7 +291,7 @@ ol, ul {
     width: var(--trending-article-image-width);
 }
 
-.trending li {
+.trending li a {
     display: flex;
     column-gap: var(--trending-item-column-gap);
     align-items: center;
@@ -316,11 +316,11 @@ ol, ul {
         color: var(--red);
     }
 
-    .new a:hover {
+    .new a:hover h3 {
         color: var(--gold);
     }
 
-    .trending a:hover {
+    .trending a:hover h3 {
         color: var(--red);
     }
 }
