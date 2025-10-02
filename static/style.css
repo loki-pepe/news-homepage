@@ -122,7 +122,7 @@ body {
     padding-inline: var(--button-padding-inline) calc(var(--button-padding-inline) - var(--button-letter-spacing));
 }
 
-#close {
+.close {
     display: none;
     width: var(--close-button-size);
     aspect-ratio: 1;
@@ -132,7 +132,7 @@ body {
     align-self: flex-end;
 }
 
-#close svg {
+.close svg {
     fill: var(--navy-950);
 }
 
@@ -198,12 +198,12 @@ main {
     gap: var(--main-row-gap) var(--main-column-gap);
 }
 
-#menu ul {
+.menu ul {
     display: flex;
     gap: var(--nav-list-row-gap) var(--nav-list-column-gap);
 }
 
-#menu-button {
+.menu-button {
     display: none;
     width: var(--menu-button-width);
     background-color: transparent;
@@ -211,7 +211,7 @@ main {
     cursor: pointer;
 }
 
-#menu-button svg {
+.menu-button svg {
     fill: var(--navy-950);
 }
 
@@ -309,7 +309,7 @@ ol, ul {
         background-color: var(--navy-950);
     }
 
-    #menu-button:hover svg {
+    .menu-button:hover svg {
         fill: var(--red);
     }
 
@@ -327,11 +327,11 @@ ol, ul {
 }
 
 @media (width < 56rem) {
-    #close {
+    .close {
         display: block;
     }
 
-    #menu {
+    .menu {
         position: absolute;
         top: 0;
         right: 0;
@@ -346,11 +346,11 @@ ol, ul {
         flex-direction: column;
         row-gap: var(--menu-mobile-gap);
     }
-    #menu.open {
+    .menu.open {
         display: flex;
     }
 
-    #menu .overlay {
+    .menu .overlay {
         background-color: hsl(0, 0%, 0%, 0.5);
         position: absolute;
         left: -100vw;
@@ -359,12 +359,12 @@ ol, ul {
         height: 100vh;
     }
 
-    #menu ul {
+    .menu ul {
         flex-direction: column;
         width: var(--menu-content-width);
     }
 
-    #menu-button {
+    .menu-button {
         display: block;
     }
 }
