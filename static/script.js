@@ -16,7 +16,7 @@ function closeMenu() {
     menuToggled = false;
     focusTrap.deactivate();
     openMenuBtn.focus();
-    openMenuBtn.setAttribute("aria-expanded", false);
+    openMenuBtn.setAttribute("aria-expanded", "false");
 
     document.body.style.position = "";
     document.body.style.top = "";
@@ -81,7 +81,7 @@ function openMenu() {
         focusTrap.activate();
     }
     closeMenuBtn.focus();
-    openMenuBtn.setAttribute("aria-expanded", true);
+    openMenuBtn.setAttribute("aria-expanded", "true");
 
     scrollY = window.scrollY;
     document.body.style.position = "fixed";
